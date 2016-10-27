@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Countdown</title>
+        <script>
+            var lit4 = new Date(2017, 1, 10, 17, 0, 0, 0);
+            function refresh() {
+                var timeDif = (lit4 - new Date())/1000;
+                document.getElementById("d").innerText = Math.floor(timeDif/86400);
+                document.getElementById("h").innerText = Math.floor((timeDif%86400)/3600);
+                document.getElementById("m").innerText = Math.floor((timeDif%3600)/60);
+                document.getElementById("s").innerText = Math.floor((timeDif%60));
+                
+            }
+            
+            function timer() {
+                setInterval(refresh, 1000);
+                console.log(new Date());
+                console.log(lit4);
+            }
+        </script>  
+        <style>
+            .clock td {
+                text-align: center;
+                width: 20%;
+            }
+            .schools td {
+            }
+            .schools img {
+                width: 200px;
+                height: 200px;
+            }
+            h1 {
+                font-weight: bold;
+                font-size: 4em;
+            }
+            body {
+                text-align: center; 
+                font-family: sans-serif; 
+                background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/disp/143fca3542688.5601b2abcda49.jpg');
+                background-size: cover;
+                color: white;
+                text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            }
+        </style>
+    </head>
+    <body onload="refresh();timer()" style="">
+        <h1>When is Little 4?</h1>
+        <table align="center" class="clock">
+            <tr>
+                <td>
+                    <h1 id="d">00</h1>
+                </td>
+                <td>
+                    <h1 id="h">00</h1>
+                </td>
+                <td>
+                    <h1 id="m">00</h1>
+                </td>
+                <td>
+                    <h1 id="s">00</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Days</h3>
+                </td>
+                <td>
+                    <h3>Hours</h3>
+                </td>
+                <td>
+                    <h3>Minutes</h3>
+                </td>
+                <td>
+                    <h3>Seconds</h3>
+                </td>
+            </tr>
+        </table>
+        <table align="center" class="schools">
+            <tr>
+                <td>
+                    <img src="oaklawn.jpg">
+                </td>
+                <td>
+                    <img src="https://s3.amazonaws.com/pubtemp/live/content/Trojans/avatar.png">
+                </td>
+                <td>
+                    <img src="http://www.dailyherald.com/gfx/site/football/team_logos/hinsdale-central.jpg&imageversion=Facebook&exactH=630&exactW=1200&exactfit=crop&noborder">
+                </td>
+                <td>
+                    <img src="http://www.dailyherald.com/gfx/site/football/team_logos/downers-grove-south.jpg&imageversion=Facebook&exactH=630&exactW=1200&exactfit=crop&noborder">
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
